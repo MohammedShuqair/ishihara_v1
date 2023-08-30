@@ -91,27 +91,22 @@ class IshiharaScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            if (provider.choiceSelected) ...{
-                              Spacer(),
-                              UnconstrainedBox(
-                                child: Container(
-                                    alignment: Alignment.center,
-                                    padding: EdgeInsets.all(12),
-                                    decoration: BoxDecoration(
-                                        color: Colors.grey[200],
-                                        borderRadius:
-                                            BorderRadius.circular(18)),
-                                    child: Text(provider.getDescription()!)),
-                              ),
-                              Spacer(),
-                            } else ...{
-                              Spacer()
-                            },
                           ],
                         );
                       },
                     ),
                   ),
+                  if (provider.choiceSelected) ...{
+                    Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+                        alignment: Alignment.center,
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(18)),
+                        child: Text('Result: ${provider.getDescription()!}')),
+                  },
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
